@@ -13,6 +13,10 @@ const educationSchema = new mongoose.Schema(
     year: {
       type: String,
       required: true
+    },
+    imgUrl:{
+      type: String,
+      default:""
     }
   },
   { timestamps: true }

@@ -2,13 +2,13 @@ import Education from "../models/educationModel.js";
 
 export const createEducation = async (req, res) => {
   try {
-    const { title, school, year } = req.body;
+    const { title, school, year, imgUrl } = req.body;
 
     if (!title || !school || !year) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    const newEducation = await Education.create({ title, school, year });
+    const newEducation = await Education.create({ title, school, year, imgUrl });
 
     return res.status(201).json({
       success: true,
